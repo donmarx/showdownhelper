@@ -1,0 +1,2 @@
+
+let pokemon = ['gengar'];
