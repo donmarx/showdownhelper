@@ -1,5 +1,3 @@
-const getDmgRelations = require('./getDmgRelations');
-
 async function getInformationByName(pokemon){
     //standardizes the names for the api
     var name = pokemon.trim().replace(" ", "-").toLowerCase()
@@ -15,8 +13,8 @@ async function getInformationByName(pokemon){
         typesUrl.push(info["types"][i]["type"]["url"]);
     };
 
-    PersonalTypeChart = await getDmgRelations(typesUrl);
+    var PersonalTypeChart = await getDmgRelations(typesUrl);
+
+    return PersonalTypeChart;
 
 };
-
-getInformationByName("diglett");

@@ -1,32 +1,22 @@
-document.addEventListener("DOMContentLoaded", function() {
-var fieldConfig = 0;
+jQuery($(document).ready(function() {
 
-console.log(document.getElementById("submitButton").textContent)
+    jQuery(async function(){
+        $(".statbar").on("mouseenter",async function() {
 
-jQuery(function(){
-    $("#submitButton").on("click",async function() {
-        switch(fieldConfig){
-            case (0):
-                getInformationByName(document.querySelector(".statbar.rstatbar.leftstatbar").textContent);
-                fieldConfig++;
-                console.log(fieldConfig)
-                break;
-            case (1):
-                getInformationByName(document.querySelector(".statbar.rstatbar.rightstatbar").textContent);
-                fieldConfig++;
-                console.log(fieldConfig)
-                break;
-            case (2):
-                getInformationByName(document.querySelector(".statbar.lstatbar.leftstatbar").textContent);
-                fieldConfig++;
-                console.log(fieldConfig)
-                break;
-            case (3):
-                getInformationByName(document.querySelector(".statbar.lstatbar.rightstatbar").textContent);
-                fieldConfig = 0;
-                console.log(fieldConfig)
-                break;
-            }
+            var pokemon = $(this).text();
+
+            var dmgArrays = await getInformationByName(pokemon)
+
+            var twoTimesWeak = dmgArrays[0],
+            fourTimesWeak = dmgArrays[1],
+            twoTimesResist = dmgArrays[2],
+            fourTimesResist = dmgArrays[3],
+            nodmg = dmgArrays[4]
+
+            console.log(`twoTimesWeak: ${twoTimesWeak}\nfourTimesWeak: ${fourTimesWeak}\ntwoTimesResist:${twoTimesResist}\nfourTimesResist:${fourTimesResist}\nnodmg:${nodmg}`)
+            
         });
+
     })
-});
+
+}));

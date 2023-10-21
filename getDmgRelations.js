@@ -22,7 +22,7 @@ typeList = {
 
 async function getDmgRelations(typesUrl){
 
-    var PersonalTypeChart = JSON.parse(JSON.stringify(typeList));
+    let PersonalTypeChart = JSON.parse(JSON.stringify(typeList));
 
     var weakness = []
     var resist = []
@@ -59,15 +59,11 @@ async function getDmgRelations(typesUrl){
             PersonalTypeChart[n] = 0;
         }
     }
-    getRelationsImages(PersonalTypeChart);
-
-    return PersonalTypeChart;
+    return getDmgArrays(PersonalTypeChart);
 }
 
 function getDmgArrays(list){
-    var PersonalTypeChart = JSON.parse(JSON.stringify(list));
-
-    console.log(PersonalTypeChart);
+    let PersonalTypeChart = JSON.parse(JSON.stringify(list));
 
     var twoTimesWeak = [];
     var fourTimesWeak = [];
@@ -101,21 +97,3 @@ function getDmgArrays(list){
 
     return [twoTimesWeak,fourTimesWeak,twoTimesResist,fourTimesResist,nodmg];
 };
-
-
-function getPokemonInfoDiv(list){
-    const dmgArrays = getDmgArrays(list);
-
-    var twoTimesWeak = dmgArrays[0],
-        fourTimesWeak = dmgArrays[1],
-        twoTimesResist = dmgArrays[2],
-        fourTimesResist = dmgArrays[3],
-        nodmg = dmgArrays[4]
-
-    console.log(twoTimesWeak,fourTimesWeak,twoTimesResist,fourTimesResist,nodmg)
-
-    
-
-}
-
-module.exports = getDmgRelations;
