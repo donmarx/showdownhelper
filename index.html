@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="app.js" async></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="getDmgRelations.js"></script>
+    <script src="getInformationByName.js"></script>
+    <script src="app.js"></script>
     <title>test</title>
 </head>
 <body>
     <form>
-        <label for="textInput">Enter Text:</label>
-        <input type="text" id="textInput" name="textInput">
-        <button type="button" id="submitButton">Submit</button>
+    <button type="button" id="submitButton">get info</button>
     </form>
     
-    <div class="pokemon-field">
-        <div id="left-enemy">1</div>
-        <div id="right-enemy">2</div>
-        <div id="left-ally">3</div>
-        <div id="right-ally">4</div>
+    <div role="complementary">
+        <div class="statbar rstatbar leftstatbar"><strong>pikachu</strong></div>
+        <div class="statbar rstatbar rightstatbar"><strong>gengar</strong></div>
+        <div class="statbar lstatbar leftstatbar"><strong>flutter mane</strong></div>
+        <div class="statbar lstatbar rightstatbar"><strong>tauros</strong></div>
     </div>
 
+    <div id="weaknesses">
+        <div id="1"></div>
+        <div id="2"></div>
+        <div id="3"></div>
+        <div id="4"></div>
+    </div>
     
 </body>
 </html>

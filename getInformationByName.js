@@ -1,4 +1,4 @@
-const getDmgRelations = require('./getDmgRelations.js')
+const getDmgRelations = require('./getDmgRelations');
 
 async function getInformationByName(pokemon){
     //standardizes the names for the api
@@ -17,8 +17,6 @@ async function getInformationByName(pokemon){
 
     PersonalTypeChart = await getDmgRelations(typesUrl);
 
-    console.log(PersonalTypeChart)
-
 };
 
-module.exports = getInformationByName;
+getInformationByName("diglett");
