@@ -18,3 +18,9 @@ async function getInformationByName(pokemon){
     return PersonalTypeChart;
 
 };
+
+function getPos(e){
+    x=e.clientX;
+    y=e.clientY;
+    return [x,y];
+};
