@@ -1,3 +1,6 @@
 .helper{
     position: absolute;
+    background-size: auto;
+    background-color: aqua;
+    float: right;
 }

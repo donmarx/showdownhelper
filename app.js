@@ -37,37 +37,70 @@ jQuery($(document).ready(function() {
             console.log(`twoTimesWeak: ${twoTimesWeak}\nfourTimesWeak: ${fourTimesWeak}\ntwoTimesResist:${twoTimesResist}\nfourTimesResist:${fourTimesResist}\nnodmg:${nodmg}`)
             
             //style top and left
-            var newDiv = '<div class="helper"></div>';
+            var newDiv = '<div id="helper"></div>';
+
+            $("body").append(newDiv);
             
             if(fourTimesWeak.length>0){
-                var fourTimesWeakDiv = '<div class="fourTimesWeak"><p>Four Times Weak:</p><br></div>'
-                var fourTimesImagesDiv = '<div></div>'
+                var fourTimesWeakDiv = '<div id="fourTimesWeak"><p>Four Times Weak:</p><br></div>'
+                $("#helper").append(fourTimesWeakDiv);
 
                 for(let i=0; i<fourTimesWeak.length; i++){
-                    $(fourTimesImagesDiv).append(typeImages[fourTimesWeak[i]]);
+                    $("#fourTimesWeak").append(typeImages[fourTimesWeak[i]]);
                     console.log(fourTimesWeak[i]);
                     console.log(typeImages[fourTimesWeak[i]])
                 };
-                console.log(fourTimesImagesDiv);
-                $(fourTimesWeakDiv).append(fourTimesImagesDiv);
-                $(newDiv).append(fourTimesWeakDiv);
             };
 
-            $("body").prepend(newDiv);
-
-           /* if(twoTimesWeak.length>0){
-                var $twoTimesWeak = '<div class="twoTimesWeak"><p>two Times Weak:</p><br></div>'
-                var $twoTimesImages = '<div></div>'
+            if(twoTimesWeak.length>0){
+                var twoTimesWeakDiv = '<div id="twoTimesWeak"><p>Two Times Weak:</p><br></div>'
+                $("#helper").append(twoTimesWeakDiv);
 
                 for(let i=0; i<twoTimesWeak.length; i++){
-                    $twoTimesImages.append(typeImages[twoTimesWeak[i]]);
+                    $("#twoTimesWeak").append(typeImages[twoTimesWeak[i]]);
+                    console.log(twoTimesWeak[i]);
+                    console.log(typeImages[twoTimesWeak[i]])
                 };
+            };
 
-                $twoTimesWeak.append($fourTimesImages);
-                $newDiv.append($fourTimesWeak);
-            }; */
+            if(fourTimesResist.length>0){
+                var fourTimesResistDiv = '<div id="fourTimesResist"><p>Four Times Resist:</p><br></div>'
+                $("#helper").append(fourTimesResistDiv);
+
+                for(let i=0; i<fourTimesResist.length; i++){
+                    $("#fourTimesResist").append(typeImages[fourTimesResist[i]]);
+                    console.log(fourTimesResist[i]);
+                    console.log(typeImages[fourTimesResist[i]])
+                };
+            };
+
+            if(twoTimesResist.length>0){
+                var twoTimesResistDiv = '<div id="twoTimesResist"><p>Two Times Resist:</p><br></div>'
+                $("#helper").append(twoTimesResistDiv);
+
+                for(let i=0; i<twoTimesResist.length; i++){
+                    $("#twoTimesResist").append(typeImages[twoTimesResist[i]]);
+                    console.log(twoTimesResist[i]);
+                    console.log(typeImages[twoTimesResist[i]])
+                };
+            };
+
+            if(nodmg.length>0){
+                var nodmgDiv = '<div id="nodmg"><p>Two Times Resist:</p><br></div>'
+                $("#helper").append(nodmg);
+
+                for(let i=0; i<nodmg.length; i++){
+                    $("#nodmg").append(typeImages[nodmg[i]]);
+                    console.log(nodmg[i]);
+                    console.log(typeImages[nodmg[i]])
+                };
+            };
 
         });
+        
+         $(".statbar").on("mouseleave",async function(event){
+            $("#helper").delay(1000).remove();
+        }); 
 
     })
 
