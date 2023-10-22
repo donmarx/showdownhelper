@@ -42,64 +42,54 @@ jQuery($(document).ready(function() {
             $("body").append(newDiv);
             
             if(fourTimesWeak.length>0){
-                var fourTimesWeakDiv = '<div id="fourTimesWeak"><p>Four Times Weak:</p><br></div>'
+                var fourTimesWeakDiv = '<div id="fourTimesWeak" class="stat"><p>Four Times Weak:</p></div>'
                 $("#helper").append(fourTimesWeakDiv);
 
                 for(let i=0; i<fourTimesWeak.length; i++){
                     $("#fourTimesWeak").append(typeImages[fourTimesWeak[i]]);
-                    console.log(fourTimesWeak[i]);
-                    console.log(typeImages[fourTimesWeak[i]])
                 };
             };
 
             if(twoTimesWeak.length>0){
-                var twoTimesWeakDiv = '<div id="twoTimesWeak"><p>Two Times Weak:</p><br></div>'
+                var twoTimesWeakDiv = '<div id="twoTimesWeak" class="stat"><p>Two Times Weak:</p></div>'
                 $("#helper").append(twoTimesWeakDiv);
 
                 for(let i=0; i<twoTimesWeak.length; i++){
                     $("#twoTimesWeak").append(typeImages[twoTimesWeak[i]]);
-                    console.log(twoTimesWeak[i]);
-                    console.log(typeImages[twoTimesWeak[i]])
                 };
             };
 
             if(fourTimesResist.length>0){
-                var fourTimesResistDiv = '<div id="fourTimesResist"><p>Four Times Resist:</p><br></div>'
+                var fourTimesResistDiv = '<div id="fourTimesResist" class="stat"><p>Four Times Resist:</p></div>'
                 $("#helper").append(fourTimesResistDiv);
 
                 for(let i=0; i<fourTimesResist.length; i++){
                     $("#fourTimesResist").append(typeImages[fourTimesResist[i]]);
-                    console.log(fourTimesResist[i]);
-                    console.log(typeImages[fourTimesResist[i]])
                 };
             };
 
             if(twoTimesResist.length>0){
-                var twoTimesResistDiv = '<div id="twoTimesResist"><p>Two Times Resist:</p><br></div>'
+                var twoTimesResistDiv = '<div id="twoTimesResist" class="stat"><p>Two Times Resist:</p></div>'
                 $("#helper").append(twoTimesResistDiv);
 
                 for(let i=0; i<twoTimesResist.length; i++){
                     $("#twoTimesResist").append(typeImages[twoTimesResist[i]]);
-                    console.log(twoTimesResist[i]);
-                    console.log(typeImages[twoTimesResist[i]])
                 };
             };
 
             if(nodmg.length>0){
-                var nodmgDiv = '<div id="nodmg"><p>Two Times Resist:</p><br></div>'
-                $("#helper").append(nodmg);
+                var nodmgDiv = '<div id="nodmg" class="stat"><p>Immune To:</p></div>'
+                $("#helper").append(nodmgDiv);
 
                 for(let i=0; i<nodmg.length; i++){
                     $("#nodmg").append(typeImages[nodmg[i]]);
-                    console.log(nodmg[i]);
-                    console.log(typeImages[nodmg[i]])
                 };
             };
 
         });
         
          $(".statbar").on("mouseleave",async function(event){
-            $("#helper").delay(1000).remove();
+            $("#helper").remove();
         }); 
 
     })
