@@ -19,8 +19,11 @@ async function getInformationByName(pokemon){
 
 };
 
-function getPos(e){
-    x=e.clientX;
-    y=e.clientY;
-    return [x,y];
+function getPos(event){
+    let x = event.clientX;
+    let y = event.clientY;
+
+    const helper = document.getElementById('helper');
+    helper.style.top = y + "px";
+    helper.style.left = x + "px";
 };

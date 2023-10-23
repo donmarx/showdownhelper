@@ -2,10 +2,8 @@
     font-family: Verdana,Helvetica,Arial,sans-serif;
     font-size: 14px;
     font-weight: 800;
-    right: 0px;
     position: absolute;
     border: black solid 2px;
-    box-shadow: 10px 5px 5px;
     margin: 40px;
     padding: 5px;
     border-radius: 15px;
@@ -15,4 +13,8 @@
 #helper .stat{
     padding: 5px;
     border-bottom: 1px grey solid;
+}
+
+#helper .stat:last-child{
+    border-bottom: 0px;
 }

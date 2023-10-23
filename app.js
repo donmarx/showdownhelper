@@ -31,10 +31,6 @@ jQuery($(document).ready(function() {
                  twoTimesResist, 
                  fourTimesResist, 
                  nodmg] = await getInformationByName(pokemon);
-
-            var [x,y] = getPos(event);
-
-            console.log(`twoTimesWeak: ${twoTimesWeak}\nfourTimesWeak: ${fourTimesWeak}\ntwoTimesResist:${twoTimesResist}\nfourTimesResist:${fourTimesResist}\nnodmg:${nodmg}`)
             
             //style top and left
             var newDiv = '<div id="helper"></div>';
@@ -85,6 +81,8 @@ jQuery($(document).ready(function() {
                     $("#nodmg").append(typeImages[nodmg[i]]);
                 };
             };
+
+            getPos(event);
 
         });
         
