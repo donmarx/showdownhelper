@@ -1,14 +1,15 @@
 #helper{
     font-family: Verdana,Helvetica,Arial,sans-serif;
+    color: black;
     font-size: 14px;
     font-weight: 800;
     position: absolute;
-    border: black solid 2px;
+    border: black solid 1px;
     margin: 40px;
     padding: 5px;
     border-radius: 15px;
     background-size: auto;
-    background-color: rgba(255, 255, 255, 0.514);
+    background-color: rgba(255, 255, 255, 0.767);
 }
 #helper .stat{
     padding: 5px;
@@ -17,4 +18,8 @@
 
 #helper .stat:last-child{
     border-bottom: 0px;
+}
+
+#helper img{
+    padding: 2px;
 }

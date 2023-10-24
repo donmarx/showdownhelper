@@ -2,13 +2,14 @@
     "name": "Showdown Helper",
     "version": "0.0.9",
     "description": "Shows Pokemon Typing Matchups When You Hover Over Its Name",
-    "permissions": ["storage", "tabs"],
+    "permissions": ["storage", "tabs", "activeTab", "declarativeContent", "scripting"],
     "host_permissions": ["https://*.pokemonshowdown.com/*"],
     "content_scripts": [
       {
         "matches": ["https://*.pokemonshowdown.com/*"],
         "js": ["jquery.js","getDmgRelations.js","getInformationByName.js","app.js"],
-        "css" : ["styles.css"]
+        "css" : ["styles.css"],
+        "run_at": "document_idle"
       }
     ],
     "web_accessible_resources": [

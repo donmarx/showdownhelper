@@ -1,5 +1,8 @@
+console.log("loaded info by name")
+
 async function getInformationByName(pokemon){
     //standardizes the names for the api
+    console.log(pokemon)
     var name = pokemon.trim().replace(" ", "-").toLowerCase()
 
     var url = 'https://pokeapi.co/api/v2/pokemon/' + name;

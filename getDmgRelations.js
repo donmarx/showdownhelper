@@ -1,3 +1,5 @@
+console.log("loaded dmg relations")
+
 typeList = {
     "normal" : 1,
     "fire" : 1,
