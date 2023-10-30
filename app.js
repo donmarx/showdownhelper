@@ -29,84 +29,86 @@ typeImages = {
         },500)
       }
 
-      waitForElement(".statbar",function(){
-        jQuery(async function(){
-            $(".statbar").on("mouseenter",async function buildHelper(event) {
-        
-                console.log("hovered");
-        
-                var pokemon = $(this).find("strong").text();
-                var level = $(this).find("small").text();
-        
-                console.log(pokemon)
-        
-                pokemon = pokemon.replace(level, "")
-        
-                var [twoTimesWeak, 
-                     fourTimesWeak, 
-                     twoTimesResist, 
-                     fourTimesResist, 
-                     nodmg] = await getInformationByName(pokemon);
-                
-                //style top and left
-                var newDiv = '<div id="helper"></div>';
-        
-                $("body").append(newDiv);
-                
-                if(fourTimesWeak.length>0){
-                    var fourTimesWeakDiv = '<div id="fourTimesWeak" class="stat"><p>Four Times Weak:</p></div>'
-                    $("#helper").append(fourTimesWeakDiv);
-        
-                    for(let i=0; i<fourTimesWeak.length; i++){
-                        $("#fourTimesWeak").append(typeImages[fourTimesWeak[i]]);
-                    };
-                };
-        
-                if(twoTimesWeak.length>0){
-                    var twoTimesWeakDiv = '<div id="twoTimesWeak" class="stat"><p>Two Times Weak:</p></div>'
-                    $("#helper").append(twoTimesWeakDiv);
-        
-                    for(let i=0; i<twoTimesWeak.length; i++){
-                        $("#twoTimesWeak").append(typeImages[twoTimesWeak[i]]);
-                    };
-                };
-        
-                if(fourTimesResist.length>0){
-                    var fourTimesResistDiv = '<div id="fourTimesResist" class="stat"><p>Four Times Resist:</p></div>'
-                    $("#helper").append(fourTimesResistDiv);
-        
-                    for(let i=0; i<fourTimesResist.length; i++){
-                        $("#fourTimesResist").append(typeImages[fourTimesResist[i]]);
-                    };
-                };
-        
-                if(twoTimesResist.length>0){
-                    var twoTimesResistDiv = '<div id="twoTimesResist" class="stat"><p>Two Times Resist:</p></div>'
-                    $("#helper").append(twoTimesResistDiv);
-        
-                    for(let i=0; i<twoTimesResist.length; i++){
-                        $("#twoTimesResist").append(typeImages[twoTimesResist[i]]);
-                    };
-                };
-        
-                if(nodmg.length>0){
-                    var nodmgDiv = '<div id="nodmg" class="stat"><p>Immune To:</p></div>'
-                    $("#helper").append(nodmgDiv);
-        
-                    for(let i=0; i<nodmg.length; i++){
-                        $("#nodmg").append(typeImages[nodmg[i]]);
-                    };
-                };
-        
-                getPos(event);
-        
-            });
+      async function callback(){
+        $(".statbar").on("mouseenter",async function buildHelper(event) {
+    
+            console.log("hovered");
+    
+            var pokemon = $(this).find("strong").text();
+            var level = $(this).find("small").text();
+    
+            console.log(pokemon)
+    
+            pokemon = pokemon.replace(level, "")
+    
+            var [twoTimesWeak, 
+                 fourTimesWeak, 
+                 twoTimesResist, 
+                 fourTimesResist, 
+                 nodmg] = await getInformationByName(pokemon);
             
-             $(".statbar").on("mouseleave",async function(event){
-                $("#helper").remove();
-            }); 
-        
+            //style top and left
+            var newDiv = '<div id="helper"></div>';
+    
+            $("body").append(newDiv);
+            
+            if(fourTimesWeak.length>0){
+                var fourTimesWeakDiv = '<div id="fourTimesWeak" class="stat"><p>Four Times Weak:</p></div>'
+                $("#helper").append(fourTimesWeakDiv);
+    
+                for(let i=0; i<fourTimesWeak.length; i++){
+                    $("#fourTimesWeak").append(typeImages[fourTimesWeak[i]]);
+                };
+            };
+    
+            if(twoTimesWeak.length>0){
+                var twoTimesWeakDiv = '<div id="twoTimesWeak" class="stat"><p>Two Times Weak:</p></div>'
+                $("#helper").append(twoTimesWeakDiv);
+    
+                for(let i=0; i<twoTimesWeak.length; i++){
+                    $("#twoTimesWeak").append(typeImages[twoTimesWeak[i]]);
+                };
+            };
+    
+            if(fourTimesResist.length>0){
+                var fourTimesResistDiv = '<div id="fourTimesResist" class="stat"><p>Four Times Resist:</p></div>'
+                $("#helper").append(fourTimesResistDiv);
+    
+                for(let i=0; i<fourTimesResist.length; i++){
+                    $("#fourTimesResist").append(typeImages[fourTimesResist[i]]);
+                };
+            };
+    
+            if(twoTimesResist.length>0){
+                var twoTimesResistDiv = '<div id="twoTimesResist" class="stat"><p>Two Times Resist:</p></div>'
+                $("#helper").append(twoTimesResistDiv);
+    
+                for(let i=0; i<twoTimesResist.length; i++){
+                    $("#twoTimesResist").append(typeImages[twoTimesResist[i]]);
+                };
+            };
+    
+            if(nodmg.length>0){
+                var nodmgDiv = '<div id="nodmg" class="stat"><p>Immune To:</p></div>'
+                $("#helper").append(nodmgDiv);
+    
+                for(let i=0; i<nodmg.length; i++){
+                    $("#nodmg").append(typeImages[nodmg[i]]);
+                };
+            };
+    
+            getPos(event);
+    
         });
+        
+         $(".statbar").on("mouseleave",async function(event){
+            $("#helper").remove();
+        }); 
+    
+    };
+
+      waitForElement(".statbar",function(){
+        callback();
         console.log("done");
     });
 
