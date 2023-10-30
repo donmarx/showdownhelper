@@ -1,22 +1,22 @@
 typeImages = {
-    electric : `<img src=${chrome.runtime.getURL("images/Electric.png")} width="60px"></img>`,
-    dark : `<img src=${chrome.runtime.getURL("images/Dark.png")} width="60px"></img>`,
-    dragon : `<img src=${chrome.runtime.getURL("images/Dragon.png")} width="60px"></img>`,
-    bug : `<img src=${chrome.runtime.getURL("images/Bug.png")} width="60px"></img>`,
-    fairy : `<img src=${chrome.runtime.getURL("images/Fairy.png")} width="60px"></img>`,
-    fighting : `<img src=${chrome.runtime.getURL("images/Fighting.png")} width="60px"></img>`,
-    fire : `<img src=${chrome.runtime.getURL("images/Flying.png")} width="60px"></img>`,
-    flying : `<img src=${chrome.runtime.getURL("images/Flying.png")} width="60px"></img>`,
-    ghost : `<img src=${chrome.runtime.getURL("images/Ghost.png")} width="60px"></img>`,
-    grass : `<img src=${chrome.runtime.getURL("images/Grass.png")} width="60px"></img>`,
-    ground : `<img src=${chrome.runtime.getURL("images/Ground.png")} width="60px"></img>`,
-    ice : `<img src=${chrome.runtime.getURL("images/Ice.png")} width="60px"></img>`,
-    normal : `<img src=${chrome.runtime.getURL("images/Normal.png")} width="60px"></img>`,
-    poison : `<img src=${chrome.runtime.getURL("images/Poison.png")} width="60px"></img>`,
-    psychic : `<img src=${chrome.runtime.getURL("images/Psychic.png")} width="60px"></img>`,
-    rock : `<img src=${chrome.runtime.getURL("images/Rock.png")} width="60px"></img>`,
-    steel : `<img src=${chrome.runtime.getURL("images/Steel.png")} width="60px"></img>`,
-    water : `<img src=${chrome.runtime.getURL("images/Water.png")} width="60px"></img>`
+    electric : `<img src=${chrome.runtime.getURL("images/Electric.png")} width= 40px"></img>`,
+    dark : `<img src=${chrome.runtime.getURL("images/Dark.png")} width= 40px"></img>`,
+    dragon : `<img src=${chrome.runtime.getURL("images/Dragon.png")} width= 40px"></img>`,
+    bug : `<img src=${chrome.runtime.getURL("images/Bug.png")} width= 40px"></img>`,
+    fairy : `<img src=${chrome.runtime.getURL("images/Fairy.png")} width= 40px"></img>`,
+    fighting : `<img src=${chrome.runtime.getURL("images/Fighting.png")} width= 40px"></img>`,
+    fire : `<img src=${chrome.runtime.getURL("images/Fire.png")} width= 40px"></img>`,
+    flying : `<img src=${chrome.runtime.getURL("images/Flying.png")} width= 40px"></img>`,
+    ghost : `<img src=${chrome.runtime.getURL("images/Ghost.png")} width= 40px"></img>`,
+    grass : `<img src=${chrome.runtime.getURL("images/Grass.png")} width= 40px"></img>`,
+    ground : `<img src=${chrome.runtime.getURL("images/Ground.png")} width= 40px"></img>`,
+    ice : `<img src=${chrome.runtime.getURL("images/Ice.png")} width= 40px"></img>`,
+    normal : `<img src=${chrome.runtime.getURL("images/Normal.png")} width= 40px"></img>`,
+    poison : `<img src=${chrome.runtime.getURL("images/Poison.png")} width= 40px"></img>`,
+    psychic : `<img src=${chrome.runtime.getURL("images/Psychic.png")} width= 40px"></img>`,
+    rock : `<img src=${chrome.runtime.getURL("images/Rock.png")} width= 40px"></img>`,
+    steel : `<img src=${chrome.runtime.getURL("images/Steel.png")} width= 40px"></img>`,
+    water : `<img src=${chrome.runtime.getURL("images/Water.png")} width= 40px"></img>`
 }
 
     function waitForElement(elementPath, callBack){
@@ -31,7 +31,7 @@ typeImages = {
 
       waitForElement(".statbar",function(){
         jQuery(async function(){
-            $(".statbar").on("mouseenter",async function(event) {
+            $(".statbar").on("mouseenter",async function buildHelper(event) {
         
                 console.log("hovered");
         
