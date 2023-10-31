@@ -29,7 +29,7 @@ typeImages = {
         },500)
       }
 
-      async function callback(){
+      const callback = async function(mutationsList, observer){
         $(".statbar").on("mouseenter",async function buildHelper(event) {
     
             console.log("hovered");
@@ -69,6 +69,15 @@ typeImages = {
                     $("#twoTimesWeak").append(typeImages[twoTimesWeak[i]]);
                 };
             };
+
+            if(twoTimesResist.length>0){
+                var twoTimesResistDiv = '<div id="twoTimesResist" class="stat"><p>Two Times Resist:</p></div>'
+                $("#helper").append(twoTimesResistDiv);
+    
+                for(let i=0; i<twoTimesResist.length; i++){
+                    $("#twoTimesResist").append(typeImages[twoTimesResist[i]]);
+                };
+            };
     
             if(fourTimesResist.length>0){
                 var fourTimesResistDiv = '<div id="fourTimesResist" class="stat"><p>Four Times Resist:</p></div>'
@@ -79,14 +88,6 @@ typeImages = {
                 };
             };
     
-            if(twoTimesResist.length>0){
-                var twoTimesResistDiv = '<div id="twoTimesResist" class="stat"><p>Two Times Resist:</p></div>'
-                $("#helper").append(twoTimesResistDiv);
-    
-                for(let i=0; i<twoTimesResist.length; i++){
-                    $("#twoTimesResist").append(typeImages[twoTimesResist[i]]);
-                };
-            };
     
             if(nodmg.length>0){
                 var nodmgDiv = '<div id="nodmg" class="stat"><p>Immune To:</p></div>'
@@ -109,6 +110,11 @@ typeImages = {
 
       waitForElement(".statbar",function(){
         callback();
+        const targetNode = $(".battle")[0];
+        console.log(targetNode)
+        const config = { childList: true, characterData: true, attributes: true }
+        let observer = new MutationObserver(callback);
+        observer.observe(targetNode, config);
         console.log("done");
     });
 
