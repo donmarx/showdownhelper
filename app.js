@@ -110,11 +110,18 @@ typeImages = {
 
       waitForElement(".statbar",function(){
         callback();
-        const targetNode = $(".battle")[0];
+        const config = { childList: true, characterData: true, attributes: true, subtree: true }
+        let observer1 = new MutationObserver(callback);
+        let observer2 = new MutationObserver(callback);
+        const targetNode = $(".statbar");
         console.log(targetNode)
-        const config = { childList: true, characterData: true, attributes: true }
-        let observer = new MutationObserver(callback);
-        observer.observe(targetNode, config);
+        console.log(targetNode[0])
+        console.log(targetNode[1])
+
+            observer1.observe(targetNode[0], config);
+            observer2.observe(targetNode[1], config);
+
+        
         console.log("done");
     });
 
