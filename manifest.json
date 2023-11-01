@@ -1,24 +1,50 @@
 {
-    "name": "Showdown Helper",
-    "version": "0.0.9",
-    "description": "Shows Pokemon Typing Matchups When You Hover Over Its Name",
-    "permissions": ["storage", "tabs", "activeTab", "declarativeContent", "scripting"],
-    "host_permissions": ["https://*.pokemonshowdown.com/*"],
-    "content_scripts": [
-      {
-        "matches": ["https://*.pokemonshowdown.com/*"],
-        "js": ["jquery.js","getDmgRelations.js","getInformationByName.js","app.js"],
-        "css" : ["styles.css"],
-        "run_at": "document_idle"
-      }
-    ],
-    "web_accessible_resources": [
-      {
-        "resources": [
-          "images/*.png"
-        ],
-        "matches": ["https://*.pokemonshowdown.com/*"]
-      }
-    ],
-    "manifest_version": 3
+  "name": "Showdown Helper",
+  "version": "0.0.9",
+  "description": "Shows pokemon typing match-ups when you hover over its name",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "declarativeContent",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.pokemonshowdown.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.pokemonshowdown.com/*"
+      ],
+      "js": [
+        "jquery.js",
+        "getDmgRelations.js",
+        "getInformationByName.js",
+        "app.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*.png"
+      ],
+      "matches": [
+        "https://*.pokemonshowdown.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "images/pokeball-icon.png",
+      "48": "images/pokeball-icon.png",
+      "128": "images/pokeball-icon.png"
+    }
+  },
+  "manifest_version": 3
 }
