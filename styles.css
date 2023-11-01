@@ -4,20 +4,22 @@
     font-size: 12px;
     font-weight: 800;
     position: absolute;
-    border: black solid 1px;
     margin: 20px;
+    border: black solid 1px;
     padding: 2px;
     border-radius: 15px;
     background-size: auto;
     background-color: rgba(255, 255, 255, 0.767);
+    pointer-events: none;
 }
+
 #helper .stat{
     padding: 5px;
     border-bottom: 1px grey solid;
 }
 
 #helper .stat:last-child{
-    border-bottom: 0px;
+    border-bottom: 0;
 }
 
 #helper img{
