@@ -72,6 +72,7 @@ function getDmgArrays(list){
     var twoTimesResist = [];
     var fourTimesResist = [];
     var nodmg = [];
+    var status = 200
 
     for(const key in PersonalTypeChart){
         let num = `${PersonalTypeChart[key]}`
@@ -97,5 +98,5 @@ function getDmgArrays(list){
         }
     }
 
-    return [twoTimesWeak,fourTimesWeak,twoTimesResist,fourTimesResist,nodmg];
+    return [status,twoTimesWeak,fourTimesWeak,twoTimesResist,fourTimesResist,nodmg];
 };
